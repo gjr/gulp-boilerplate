@@ -5,3 +5,15 @@ var gulp = require("gulp"),
     pug = require("gulp-pug"),
     stylus = require("gulp-stylus"),
     uglify = require("gulp-uglify");
+
+gulp.task('styles', function() {
+  gulp.src('src/styles/main.styl')
+    .pipe(stylus())
+    .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('views', function() {
+  gulp.src('src/views/**/*.pug')
+    .pipe(pug())
+    .pipe(gulp.dest('dist'));
+});
