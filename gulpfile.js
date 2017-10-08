@@ -14,6 +14,8 @@ gulp.task('styles', function() {
 
 gulp.task('views', function() {
   gulp.src('src/views/**/*.pug')
-    .pipe(pug())
+    .pipe(pug({
+      pretty: true
+    }))
     .pipe(gulp.dest('dist'));
 });
